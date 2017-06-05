@@ -1,0 +1,16 @@
+<ng-sidebar-container>
+  <ng-sidebar [(opened)]="_opened">
+    <app-sidebar></app-sidebar>
+  </ng-sidebar>
+</ng-sidebar-container>
+
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Profil</a></li>
+    </ul>
+    <button class="btn btn-primary navbar-btn pull-right" (click)="_toggleSidebar()">Profil</button>
+    <button class="btn btn-primary navbar-btn pull-right">Sällskapsrum</button>
+    <button class="btn btn-primary navbar-btn pull-right">Logga ut</button>
+  </div>
+</nav>

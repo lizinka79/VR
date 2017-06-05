@@ -1,0 +1,33 @@
+<div class="container-search">
+  <div class="input-group input-group-lg has-feedback addon-transparent">
+    <span class="input-group-addon"><i class="fa fa-paper-plane"></i> Välj yrke</span>
+    <div class="input-group-btn" dropdown>
+      <button dropdownToggle type="button" class="btn btn-transparent dropdown-toggle">
+        Välj kategori <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu">
+        <li (click)="selectedCategoryClear()">
+          <a class="dropdown-item" href="#"><strong>Alla</strong></a>
+        </li>
+        <li *ngFor="let category of categories" (click)="selectCategory(category)">
+          <a class="dropdown-item" href="#"><strong>{{category.name}}</strong></a>
+        </li>
+      </ul>
+    </div>
+    <input placeholder="Sök yrken" [(ngModel)]="searchCategories" class="form-control" #inputCategory (click)="inputCategory.select(); showDDJobs = true;">
+  </div>
+  <div class="dropdown-list" *ngIf="showDDJobs">
+    <ul>
+      <li class="item" *ngFor="let job of jobs | filterSearch: searchCategories  | filterArray:{level:selectedCategory.level}" (click)="selectJobs(job)">
+        {{job.name}}
+      </li>
+      <li class="item" *ngIf="(jobs | filterSearch: searchCategories).length === 0">
+        Inget matchar
+      </li>
+    </ul>
+  </div>
+</div>
+<div style="display:block; margin-top:1rem;">
+<a type="button" class="btn btn-lg btn-primary">To interview</a>
+</div>
+
