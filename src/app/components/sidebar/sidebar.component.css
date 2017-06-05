@@ -1,0 +1,28 @@
+.container-sidebar {
+	background-color:#222222;
+	margin-top:70px;
+	height:100%;
+	max-width:220px;}
+
+.sidebar-section {
+	padding:2rem 1rem 1rem;
+	border-top:1px solid rgba(0,0,0,0.1);
+	border-bottom:1px solid rgba(255,255,255,0.1); }
+
+.expanded {
+	margin-bottom:1rem;
+	background-color:rgba(0,0,0,0.1) }
+
+.sidebar-section img {
+	width:100%;
+	height:auto; }
+
+h6 {
+	cursor:pointer;}
+
+h6 a {
+	color:rgba(255,255,255,0.5);}
+
+h6 a.active {
+	color:rgba(255,255,255,0.9);}
+

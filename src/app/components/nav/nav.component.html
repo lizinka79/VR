@@ -6,11 +6,10 @@
 
 <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="#">Profil</a></li>
+    <button class="btn btn-primary navbar-btn pull-left" (click)="_toggleSidebar()" tooltip="Visa profil" placement="bottom">Profil</button>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" tooltip="Spela in intervju" placement="bottom">till intervjun</a></li>
+      <li><a href="#" tooltip="Skaffa credits genom att betygsätta andras intervjuer" placement="bottom">ge feedback <span class="badge seagreen">2</span></a></li>
     </ul>
-    <button class="btn btn-primary navbar-btn pull-right" (click)="_toggleSidebar()">Profil</button>
-    <button class="btn btn-primary navbar-btn pull-right">Sällskapsrum</button>
-    <button class="btn btn-primary navbar-btn pull-right">Logga ut</button>
   </div>
 </nav>

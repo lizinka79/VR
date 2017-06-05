@@ -1,3 +1,17 @@
-<p>
-  sidebar works!
-</p>
+<div class="container-sidebar">
+  <div class="sidebar-section">
+    <img src="./assets/img/profile.png" alt="profilbild">
+  </div>
+  <div class="sidebar-section">
+    <h6 (click)="showUser()"><a [ngClass]="{active: expandUser}" tooltip="Visa profil" placement="bottom">Användare<i class="fa fa-plus pull-right"></i></a></h6>
+    <div class="webkit-transition" *ngIf="expandUser" [ngClass]="{expanded: expandUser}"><app-user></app-user></div>
+  </div>
+   <div class="sidebar-section">
+    <h6 (click)="showRating()"><a [ngClass]="{active: expandRating}" tooltip="Visa rating" placement="bottom">Rating<span class="pull-right">3.4</span></a></h6>
+    <div class="webkit-transition ifSidebar" *ngIf="expandRating" [ngClass]="{expanded: expandRating}"><app-rating></app-rating></div>
+  </div>
+  <div class="sidebar-section">
+    <h6 (click)="showCredit()"><a [ngClass]="{active: expandCredit}" tooltip="Visa credits" placement="bottom">Credits<span class="badge blue pull-right">5</span></a></h6>
+    <div class="webkit-transition" *ngIf="expandCredit" [ngClass]="{expanded: expandCredit}"><app-credit></app-credit></div>
+  </div>
+</div>

@@ -1,12 +1,8 @@
 <app-nav></app-nav>
-<div class="container-fluid container-background" [ngStyle]="{'background-image': 'url(' + backgroundImg + ')'}" >
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h1><span class="box-text transparent-dark"><b>Jobbsim</b> Hitta ditt nya jobb idag.</span></h1>
-      </div>
-    </div>
-    <app-search-sim-categories></app-search-sim-categories>
-  </div>
+<router-outlet></router-outlet>
+<div class="container-fluid container-page">
+<a class="btn btn-primary" routerLink="/startPage" routerLinkActive="active">Start</a>
+<a class="btn btn-primary" routerLink="/profilePage" routerLinkActive="active">Profile</a>
+<a class="btn btn-primary" routerLink="/communityPage" routerLinkActive="active">Community</a>
 </div>
 <app-footer></app-footer>

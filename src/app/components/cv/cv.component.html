@@ -1,0 +1,57 @@
+
+  <table id="print-section">
+    <tr><th colspan="3"><h3>Erfarenhet</h3></th></tr>
+    <tr>
+      <th class="one-fourth">Datum</th>
+      <th class="one-fourth">Bolag, Ort</th>
+      <th class="one-half">Beskrivning</th>
+    </tr>
+    <tr *ngFor='let row of experienceData'>
+      <td class="one-fourth"><input [(ngModel)]="row.date" type="text" class="form-control" id="inputDate" placeholder="datum - datum"></td>
+      <td class="one-fourth"><input [(ngModel)]="row.company" type="text" class="form-control" id="inputCompany" placeholder="Bolagsnamn, ort"></td>
+      <td class="one-half"><input [(ngModel)]="row.description" type="text" class="form-control" id="inputDescription" placeholder="Kort beskrivning"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><button (click)='addExperience()' class="btn btn-primary pull-right">Lägg till erfarenhet <i class="fa fa-plus"></i></button></td>
+    </tr>
+    <tr><th colspan="3"><h3>Utbildning</h3></th></tr>
+    <tr>
+      <th class="one-fourth">Datum</th>
+      <th class="one-fourth">Universitet, Ort</th>
+      <th class="one-half">Beskrivning</th>
+    </tr>
+    <tr *ngFor='let row of educationData'>
+      <td class="one-fourth"><input [(ngModel)]="row.date" type="text" class="form-control" id="inputDate" placeholder="datum - datum"></td>
+      <td class="one-fourth"><input [(ngModel)]="row.school" type="text" class="form-control" id="inputCompany" placeholder="Bolagsnamn, ort"></td>
+      <td class="one-half"><input [(ngModel)]="row.description" type="text" class="form-control" id="inputDescription" placeholder="Kort beskrivning"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><button (click)='addEducation()' class="btn btn-primary pull-right">Lägg till utbildning <i class="fa fa-plus"></i></button></td>
+    </tr>
+    <tr><th colspan="3"><h3>Språk</h3></th></tr>
+    <tr>
+      <th class="one-fourth">Språk</th>
+      <th class="one-fourth">Nivå</th>
+    </tr>
+    <tr *ngFor='let row of languageData'>
+      <td class="one-fourth"><select><option *ngFor='let item of languages'>{{item}}</option></select></td>
+      <td class="one-fourth"><select><option *ngFor='let item of languageLevels'>{{item}}</option></select></td>
+      <td class="one-half"><button (click)='addLanguage()' class="btn btn-primary pull-right">Lägg till språk <i class="fa fa-plus"></i></button></td>
+    </tr>
+    <tr><th colspan="3"><h3>Datakunskaper</h3></th></tr>
+    <tr>
+      <th class="one-fourth">Program, operativsystem</th>
+      <th class="one-fourth">Nivå</th>
+    </tr>
+    <tr *ngFor='let row of computerData'>
+      <td class="one-fourth"><input [(ngModel)]="row.system" type="text" class="form-control" id="inputDate" placeholder="Program, operativsystem"></td>
+      <td class="one-fourth"><select><option *ngFor='let item of computerLevels'>{{item}}</option></select></td>
+      <td class="one-half"><button (click)='addComputerSkills()' class="btn btn-primary pull-right">Lägg till datakunskap <i class="fa fa-plus"></i></button></td>
+    </tr>
+    <tr><th colspan="3"><h3>Övriga meriter</h3></th></tr>
+    <tr>
+      <td colspan="3"><textarea rows="4" class="form-control" id="inputOther" placeholder="Övriga meriter (publikationer, praktik, egna projekt, volontärarbete)"></textarea></td>
+    </tr>
+  </table>
+
+<button (click)="print()" class="btn btn-lg btn-primary clear-both display-block">Skriv ut <i class="fa fa-print"></i></button>

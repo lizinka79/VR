@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  expandUser;
+  showUser() {
+    this.expandUser = !this.expandUser; }
+
+  expandRating;
+  showRating() {
+    this.expandRating = !this.expandRating; }
+
+  expandCredit;
+  showCredit() {
+    this.expandCredit = !this.expandCredit; }
+
   constructor() { }
 
   ngOnInit() {
